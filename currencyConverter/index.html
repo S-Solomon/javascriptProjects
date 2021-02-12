@@ -15,10 +15,29 @@
         <div class="header">
           <h1>Currency Converter</h1>
         </div>
-        <div class="date">2021-02-11</div>
-        <ul class="currencies"></ul>
-        <button class="add-currency-btn"><i class="fas fa-long-arrow-alt-left"></i>Add Currency</button>
+        <div class="date">2021-02-12</div>
+        <ul class="currencies">
+            <li class="currency base-currency" id=USD>
+                <img src="https://img.geonames.org/flags/x/us.gif" alt="US flag" class="flag">
+                <div class="info">
+                    <p class="input"><span class="currency-symbol">&#36;</span><input placeholder="0.0000"></p>
+                    <p class="currency-name">USD - US Dollar</p>
+                    <p class="base-currency-rate">1 USD = 1 USD</p>
+                </div>
+                <span class="close">&times;</span>
+            </li>
+            <li class="currency" id=JPY>
+                <img src="https://img.geonames.org/flags/x/jp.gif" alt="Japan flag" class="flag">
+                <div class="info">
+                    <p class="input"><span class="currency-symbol">&#165;</span><input placeholder="0.0000"></p>
+                    <p class="currency-name">JPY - Japanese Yen</p>
+                    <p class="base-currency-rate">1 USD = 111.0401 JYP</p>
+                </div>
+                <span class="close">&times;</span>
+            </li>
+        </ul>
         <ul class="add-currency-list"></ul>
+        <button class="add-currency-btn"><i class="fas fa-long-arrow-alt-left"></i>Add Currency</button>
     </div>
     
 
