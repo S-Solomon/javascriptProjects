@@ -4,4 +4,4 @@ This is a list of Javascript Projects for Beginners. The aim is to add a minimum
 
 Day(1) - Hex Code Generator
 <br>
-Day(2) - Currency Converter
+Day(2) - 
