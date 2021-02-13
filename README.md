@@ -6,3 +6,5 @@ Day(1) - Hex Code Generator
 <br>
 Day(2) - Change navbar color on scroll
 <br>
+Day(3) - Splash screen intro
+
