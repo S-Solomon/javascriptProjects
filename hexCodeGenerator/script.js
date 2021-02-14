@@ -1,17 +1,17 @@
 const btn = document.getElementById('change');
 const text = document.getElementById('color');
 
-const generator = function() {
+const getNewColor = function() {
     newColor = '#' + (Math.random() * 0xFFFFFF<<0).toString(16);
     
     console.log(newColor.length);
     if(newColor.length < 7) {
-        generator();
+        getNewColor();
     }
 }
 
 btn.addEventListener('click', function() {
-    generator();
+    getNewColor();
 
     document.body.style.background = newColor;
     btn.style.color = newColor;
