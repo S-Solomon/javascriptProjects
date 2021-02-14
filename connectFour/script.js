@@ -20,7 +20,15 @@ for (i = 0; i < tableData.length; i++) {
 
 // })
 
-// while(!player1){
-//     let player1 = prompt('Player One: Enter your name. You will be red');
-// }
-// player1Color = 'red'
+while(!player1){
+    var player1 = prompt('Player One: Enter your name. You will be red');
+}
+var player1Color = 'red'
+
+while(!player2){
+    var player2 = prompt('Player Two: Enter your name. You will be Yellow');
+}
+var player2Color = 'yellow'
+
+let currentPlayer = 1;
+playerTurn.textContent = `${player1}'s turn!`
