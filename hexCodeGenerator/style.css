@@ -35,6 +35,7 @@ button#change {
     border: 0px;
     border-radius: 5px;
     outline: none;
+    cursor: pointer;
 }
 
 body, button#change {
