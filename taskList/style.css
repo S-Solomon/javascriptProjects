@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    /* font-size: 1.2rem; */
+   
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* background: #161616;
+    color: white; */
+}
+
+.container {
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-item {
+    border-bottom: 1px solid black;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 100%;
+}
+.task-item:hover {
+    color: teal;
+}
+
+
+.delete {
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 0.5rem;
+
+}
+.delete:hover {
+    background-color: teal;
+    color: white;
+}
+
+.task-input {
+    width: 80%;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    outline: none;
+    padding: 1rem;
+}
+
+.submit {
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.submit:hover{
+    background-color: teal;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
