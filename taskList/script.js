@@ -1,9 +1,20 @@
 const taskInput = document.querySelector('.task-input');
 const submitBtn = document.querySelector('.submit');
 const list = document.querySelector('.list');
+const deleteBtn = document.querySelector('.delete');
 
 submitBtn.addEventListener('click', addTask);
+deleteBtn.addEventListener('click', removeAllTasks);
 list.addEventListener('click', deleteTask);
+
+function removeAllTasks(e){
+    let tasks = [];
+    if (confirm('Delete all items ?')) {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        location.reload();
+    }
+    
+}
 
 function addTask(e){
 
