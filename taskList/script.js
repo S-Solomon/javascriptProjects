@@ -21,7 +21,7 @@ function addTask(e){
 }
 
 function deleteTask(e) {
-    if (confirm('Are you sure you wish to delete this item')) {
+    if (confirm('Are you sure you wish to delete this item ?')) {
         e.target.remove()
     }
 }
@@ -40,3 +40,27 @@ function addTaskToLocalStorage(task) {
 
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
+
+function getTasksFromLocalStorage(){
+
+    let tasks;
+
+    if(localStorage.getItem('tasks') === null) {
+        tasks = [];
+    }else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    } 
+    
+    tasks.forEach(task => {
+
+        const li = document.createElement('li');
+
+        li.className = 'task-item';
+
+        li.textContent = task;
+
+        list.appendChild(li);
+    })
+}
+
+getTasksFromLocalStorage();
