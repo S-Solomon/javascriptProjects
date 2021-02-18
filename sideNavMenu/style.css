@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -12,6 +12,7 @@ body {
 
 h1 {
     text-align: center;
+    font-weight: bold;
 }
 
 .menu-open {
@@ -34,12 +35,13 @@ h1 {
 .nav {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -40%;
     width: 40%;
     height: 100vh;
     background: white;
     border-right: 1px solid black;
-    display: none;
+    transition: 0.5s;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.438);
 }
 .nav.active {
     position: fixed;
@@ -49,6 +51,9 @@ h1 {
     height: 100vh;
     background: white;
     border-right: 1px solid black;
+    transition: 0.5s;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.438);
+
 }
 
 .nav ul {
