@@ -9,6 +9,8 @@ Day(2) - Change navbar color on scroll
 Day(3) - Splash screen intro
 <br>
 Day(4) - Connect Four
+<br>
+Day (5) - Task List/ localstorage
 
 
 
