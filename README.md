@@ -11,6 +11,8 @@ Day(3) - Splash screen intro
 Day(4) - Connect Four
 <br>
 Day (5) - Task List/ localstorage
+<br>
+Day (6) - Side navigation menu
 
 
 
