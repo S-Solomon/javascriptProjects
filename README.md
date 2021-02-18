@@ -2,13 +2,13 @@
 
 This is a list of Javascript Projects for Beginners. 
 
-Day(1) - Hex Code Generator
+Day(1) - Hex code generator
 <br>
 Day(2) - Change navbar color on scroll
 <br>
 Day(3) - Splash screen intro
 <br>
-Day(4) - Connect Four
+Day(4) - Connect four
 <br>
 Day (5) - Task List/ localstorage
 <br>
