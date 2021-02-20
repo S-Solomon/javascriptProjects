@@ -13,6 +13,8 @@ Day(4) - Connect four
 Day (5) - Task List/ localstorage
 <br>
 Day (6) - Side navigation menu
+<br>
+Day (7) - Web scraper with Google chrome
 
 
 
