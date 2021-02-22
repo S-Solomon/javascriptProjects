@@ -1,26 +1,41 @@
-var movieDetails = [{}];
+const textInput = document.querySelector('#json-input');
 
-movieDetails[0]['Title'] = document.querySelector("#title-overview-widget > div.vital > div.title_block > div > div.titleBar > div.title_wrapper > h1").innerText;
+textInput.addEventListener('paste', (e) => {
+    setTimeout(createTable, 500);
+});
 
-movieDetails[0]['Release Year'] = document.querySelector("#titleYear > a").innerText;
+function createTable() {
+    let data = textInput.value;
+    let jsonData = JSON.parse(data);
+    console.log(jsonData);
 
-movieDetails[0]['Age Rating'] =  document.querySelector("#title-overview-widget > div.vital > div.title_block > div > div.titleBar > div.title_wrapper > div.subtext").innerText.slice(0,2);
+    let table = document.querySelector('.movie-details');
 
-movieDetails[0]['Duration'] = document.querySelector("#title-overview-widget > div.vital > div.title_block > div > div.titleBar > div.title_wrapper > div.subtext > time").innerText;
+    let col = [];
 
-movieDetails[0]['Genre'] = document.querySelector("#title-overview-widget > div.vital > div.title_block > div > div.titleBar > div.title_wrapper > div.subtext > a:nth-child(4)").innerText;
-
-copy(movieDetails);
-
-
-
-[
-    {
-      "Title": "Django Unchained (2012)",
-      "Release Year": "2012",
-      "Age Rating": "18",
-      "Duration": "2h 45min ",
-      "Genre": "Drama"
+    for(let i = 0; i < jsonData.length; i++){
+        for(var key in jsonData[i]){
+            if (col.indexOf(key) == -1 ){
+                col.push(key);
+            }
+        }
     }
-]
 
+    let tr = table.insertRow(-1);
+
+    for(let i = 0; i < col.length; i++){
+        let th = document.createElement('th');
+        th.innerHTML = col[i];
+        tr.appendChild(th);
+    }
+
+    for(let i = 0; i < col.length; i++){
+
+        tr = table.insertRow(-1);
+
+        for(let j = 0; j < col.length; j ++){
+            var tableCell = tr.insertCell(-1);
+            tableCell.innerHTML = jsonData[i][col[j]];
+        }
+    }
+}
