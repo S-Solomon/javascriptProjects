@@ -1,4 +1,7 @@
 const textInput = document.querySelector('#json-input');
+const copyButton = document.querySelector('.copy');
+
+copyButton.addEventListener('click', copyTable);
 
 textInput.addEventListener('paste', (e) => {
     setTimeout(createTable, 500);
@@ -39,3 +42,18 @@ function createTable() {
         }
     }
 }
+
+function copyTable() {
+    let textarea = document.createElement('textarea');
+    textarea.id = 'temp-element';
+    textarea.style.height = 0;
+    document.body.appendChild(textarea);
+    textarea.value = document.querySelector("body > div > table > tbody > tr:nth-child(2)").innerText;
+    let selector = document.querySelector('#temp-element');
+    selector.select();
+    document.execCommand('copy');
+    document.querySelector('#temp-element').remove();
+    alert('Data copied to clipboard');
+}
+
+// you can then paste the data into a spredsheet
