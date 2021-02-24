@@ -16,4 +16,22 @@ const nextSlide = () => {
     setTimeout(() => current.classList.remove('current'));
 }
 
-nextBtn.addEventListener('click', nextSlide);
+nextBtn.addEventListener('click', e => {
+    nextSlide();
+});
+
+
+const prevSlide = () => {
+    const current = document.querySelector('.current');
+    current.classList.remove('current');
+    if(current.previousElementSibling){
+        current.previousElementSibling.classList.add('current');
+    }else {
+        slides[slides.length - 1].classList.add('current');
+    }
+    setTimeout(() => current.classList.remove('current'));
+}
+
+prevBtn.addEventListener('click', e => {
+    prevSlide();
+});
