@@ -17,6 +17,8 @@ Day (6) - Side navigation menu
 Day (7) - Imdb scraper with Google chrome
 <br>
 Day (8) - Full screen image slider
+<br>
+Day (9) - news Fetch Api
 
 
 
