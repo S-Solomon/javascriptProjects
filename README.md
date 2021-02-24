@@ -15,6 +15,8 @@ Day (5) - Task List/ localstorage
 Day (6) - Side navigation menu
 <br>
 Day (7) - Imdb scraper with Google chrome
+<br>
+Day (8) - Full screen image slider
 
 
 
