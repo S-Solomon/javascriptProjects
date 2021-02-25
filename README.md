@@ -19,6 +19,8 @@ Day (7) - Imdb scraper with Google chrome
 Day (8) - Full screen image slider
 <br>
 Day (9) - news Fetch [Api](https://newsapi.org)
+<br>
+Day (10) - pagination
 
 
 
