@@ -21,6 +21,8 @@ Day (8) - Full screen image slider
 Day (9) - news Fetch [Api](https://newsapi.org)
 <br>
 Day (10) - pagination
+<br>
+Day (12) - 2D Breakout Game
 
 
 
