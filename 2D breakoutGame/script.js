@@ -5,12 +5,13 @@ var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 2;
 var dy = -2;
+// Defining a paddle to hit the ball
 var paddleHeight = 10;
 var paddleWidth = 75;
 var paddleX = (canvas.width-paddleWidth)/2;
+// Allowing the user to control the paddle
 var rightPressed = false;
 var leftPressed = false;
-
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
@@ -59,18 +60,19 @@ function draw() {
         dy = -dy;
     }
     
+    // The paddle moving logic
     if(rightPressed) {
         paddleX += 7;
         if (paddleX + paddleWidth > canvas.width){
             paddleX = canvas.width - paddleWidth;
         }
-    }
-    else if(leftPressed) {
+    }  else if(leftPressed) {
         paddleX -= 7;
         if (paddleX < 0){
             paddleX = 0;
         }
     }
+   
     
     x += dx;
     y += dy;
