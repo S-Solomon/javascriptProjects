@@ -56,21 +56,26 @@ function draw() {
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
-    if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+
+    if(y + dy < ballRadius) {
         dy = -dy;
-    }
-    
+    } else if(y + dy > canvas.height-ballRadius) {
+        if(x > paddleX && x < paddleX + paddleWidth) {
+            dy = -dy;
+        }
+        else {
+            alert('GAME OVER!');
+            document.location.reload();
+            clearInterval(interval); //Needed for chrome to end game
+        }
+    }    
     // The paddle moving logic
-    if(rightPressed) {
+    if(rightPressed && paddleX < canvas.width-paddleWidth) {
         paddleX += 7;
-        if (paddleX + paddleWidth > canvas.width){
-            paddleX = canvas.width - paddleWidth;
-        }
-    }  else if(leftPressed) {
+        
+    }  else if(leftPressed && paddleX > 0) {
         paddleX -= 7;
-        if (paddleX < 0){
-            paddleX = 0;
-        }
+       
     }
    
     
@@ -78,4 +83,4 @@ function draw() {
     y += dy;
 }
 
-setInterval(draw, 10);
+var interval = setInterval(draw, 10);
