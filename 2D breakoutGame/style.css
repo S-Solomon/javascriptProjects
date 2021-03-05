@@ -4,12 +4,7 @@
 }
 
 canvas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5rem;
-    width: 480px;
-    height: 320px;
+    display: block;
     display: block;
     margin: 0 auto;
     background: #eee;
