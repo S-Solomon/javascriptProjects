@@ -1,7 +1,6 @@
 const header = document.querySelector('header');
 
 let previousScrollPosition = window.pageYOffset;
-// console.log(previousScrollPosition);
 
 
 window.onscroll = function() {
