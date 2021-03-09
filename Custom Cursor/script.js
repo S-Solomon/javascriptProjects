@@ -22,4 +22,4 @@ links.forEach(link => {
     link.addEventListener('mouseleave', () => {
         innerCursor.classList.remove('grow');
     });
-}) 
+});
