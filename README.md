@@ -27,6 +27,8 @@ Day (12) - 2D Breakout Game
 Day (13) - Interacting with webcam
 <br>
 Day (14) -  Custom Cursor
+<br>
+Day (15) -  Horizontal Text Scroll Effect
 
 
 
