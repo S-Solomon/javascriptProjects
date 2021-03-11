@@ -48,7 +48,7 @@ a:hover {
 }
 
 .menu-toggle.active {
-    transform: rotate(-180deg);
+    transform: rotate(-270deg);
 }
 
 .menu-toggle span {
@@ -64,7 +64,7 @@ a:hover {
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
 }
-.menu-toggle.active span:nth-child(1) {
+.menu-toggle.active span:nth-child(2) {
     opacity: 0;
 }
 
