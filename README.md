@@ -31,7 +31,8 @@ Day (14) -  Custom Cursor
 Day (15) -  Horizontal Text Scroll Effect
 <br>
 Day (16) - Minimal Navigation Menu
-
+<br>
+Day (17) Animated Hamburger Menu
 
 
 
