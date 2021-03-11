@@ -29,6 +29,8 @@ Day (13) - Interacting with webcam
 Day (14) -  Custom Cursor
 <br>
 Day (15) -  Horizontal Text Scroll Effect
+<br>
+Day (16) - Minimal Navigation Menu
 
 
 
