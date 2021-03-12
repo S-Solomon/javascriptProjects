@@ -37,7 +37,5 @@ function openMenu() {
         }, 700);
     }
 
-    // navLinks.forEach((link) => {
-    //     link.classList.toggle('active');
-    // });
+
 };
