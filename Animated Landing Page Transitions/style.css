@@ -11,6 +11,7 @@ body,html {
 
 h1 {
     font-size: 1.5rem;
+    /* mix-blend-mode: difference; */
 }
 
 a {
@@ -99,6 +100,7 @@ nav {
     background-color: #4a2b32;
     color: #fff;
     opacity: 0;
+    cursor: pointer;
 }
 
 .site {
