@@ -33,6 +33,8 @@ Day (15) -  Horizontal Text Scroll Effect
 Day (16) - Minimal Navigation Menu
 <br>
 Day (17) -  Animated Hamburger Menu
+<br>
+Day(18) - Animated Landing page with Transitions
 
 
 
