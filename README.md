@@ -35,6 +35,8 @@ Day (16) - Minimal Navigation Menu
 Day (17) -  Animated Hamburger Menu
 <br>
 Day(18) - Animated Landing page with Transitions
+<br>
+Day(19)- Animate on Scroll
 
 
 
