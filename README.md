@@ -37,6 +37,8 @@ Day (17) -  Animated Hamburger Menu
 Day(18) - Animated Landing page with Transitions
 <br>
 Day(19)- Animate on Scroll
+<br>
+Day(20)- Draggable Slider
 
 
 
