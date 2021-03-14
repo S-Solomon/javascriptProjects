@@ -39,6 +39,8 @@ Day(18) - Animated Landing page with Transitions
 Day(19)- Animate on Scroll
 <br>
 Day(20)- Draggable Slider
+<br>
+Day(21)- Horizontal slider with skew effects
 
 
 
