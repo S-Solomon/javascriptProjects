@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: #161616;
+    height: 6000px;
+}
+
+.container {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    top: 20vh;
+    width: 6000px;
+    transition: transform 0.15s;
+    will-change: transform;
+}
+
+.box {
+    position: relative;
+    width: 500px;
+    height: 480px;
+    background-size: cover;
+    background-position: center;
+}
+
+.one {
+    background-image: url(./images/img1.jpg);
+}
+.two {
+    background-image: url(./images/img2.jpg);
+}
+.three {
+    background-image: url(./images/img3.jpg);
+}
+.four {
+    background-image: url(./images/img4.jpg);
+}
+.five {
+    background-image: url(./images/img5.jpg);
+}
+.six {
+    background-image: url(./images/img6.jpg);
+}
