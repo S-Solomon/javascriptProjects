@@ -21,8 +21,8 @@ body, html {
 
 .box {
     position: relative;
-    width: 500px;
-    height: 480px;
+    width: 440px;
+    height: 400px;
     background-size: cover;
     background-position: center;
 }
