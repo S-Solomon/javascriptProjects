@@ -70,9 +70,16 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
-@media screen and(max-width: 600px) {
+@media screen and (max-width: 600px) {
     .dark-mode {
         width: 250vh;
         height: 250vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dark-mode {
+        width: 300vh;
+        height: 300vh;
     }
 }
