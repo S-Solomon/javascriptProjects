@@ -43,6 +43,8 @@ Day(20)- Draggable Slider
 Day(21)- Horizontal slider with skew effects
 <br>
 Day(22)- Animated splash screen intro
+<br>
+Day(23)- Animated dark mode Toggle
 
 
 
