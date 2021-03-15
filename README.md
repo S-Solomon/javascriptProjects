@@ -41,6 +41,8 @@ Day(19)- Animate on Scroll
 Day(20)- Draggable Slider
 <br>
 Day(21)- Horizontal slider with skew effects
+<br>
+Day(22)- Animated splash screen intro
 
 
 
