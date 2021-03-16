@@ -26,25 +26,25 @@ This is a list of Javascript Projects for Beginners.
 <br>
 (12) - Interacting with webcam
 <br>
-(13) -  Custom Cursor
+(13) - Custom Cursor
 <br>
-(14) -  Horizontal Text Scroll Effect
+(14) - Horizontal Text Scroll Effect
 <br>
 (15) - Minimal Navigation Menu
 <br>
-(16) -  Animated Hamburger Menu
+(16) - Animated Hamburger Menu
 <br>
 (17) - Animated Landing page with Transitions
 <br>
-(18)- Animate on Scroll
+(18) - Animate on Scroll
 <br>
-(19)- Draggable Slider
+(19) - Draggable Slider
 <br>
-(20)- Horizontal slider with skew effects
+(20) - Horizontal slider with skew effects
 <br>
-(21)- Animated splash screen intro
+(21) - Animated splash screen intro
 <br>
-(22)- Animated dark mode Toggle
+(22) - Animated dark mode Toggle
 
 
 
