@@ -45,6 +45,8 @@ This is a list of Javascript Projects for Beginners.
 (21) - Animated splash screen intro
 <br>
 (22) - Animated dark mode Toggle
+<br>
+(23) - Disappearing navbar
 
 
 
