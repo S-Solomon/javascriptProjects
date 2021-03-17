@@ -47,6 +47,8 @@ This is a list of Javascript Projects for Beginners.
 (22) - Animated dark mode Toggle
 <br>
 (23) - Disappearing navbar
+<br>
+(24) - Nav with Image hover effect
 
 
 
