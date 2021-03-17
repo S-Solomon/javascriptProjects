@@ -2,49 +2,51 @@
 
 This is a list of Javascript Projects for Beginners. 
 
-Day(1) - Hex code generator
+(1) - Hex code generator
 <br>
-Day(2) - Change navbar color on scroll
+(2) - Change navbar color on scroll
 <br>
-Day(3) - Splash screen intro
+(3) - Splash screen intro
 <br>
-Day(4) - Connect four
+(4) - Connect four
 <br>
-Day (5) - Task List/ localstorage
+(5) - Task List/ localstorage
 <br>
-Day (6) - Side navigation menu
+(6) - Side navigation menu
 <br>
-Day (7) - Imdb scraper with Google chrome
+(7) - Imdb scraper with Google chrome
 <br>
-Day (8) - Full screen image slider
+(8) - Full screen image slider
 <br>
-Day (9) - news Fetch [Api](https://newsapi.org)
+(9) - news Fetch [Api](https://newsapi.org)
 <br>
-Day (10) - pagination
+(10) - pagination
 <br>
-Day (12) - 2D Breakout Game
+(11) - 2D Breakout Game
 <br>
-Day (13) - Interacting with webcam
+(12) - Interacting with webcam
 <br>
-Day (14) -  Custom Cursor
+(13) - Custom Cursor
 <br>
-Day (15) -  Horizontal Text Scroll Effect
+(14) - Horizontal Text Scroll Effect
 <br>
-Day (16) - Minimal Navigation Menu
+(15) - Minimal Navigation Menu
 <br>
-Day (17) -  Animated Hamburger Menu
+(16) - Animated Hamburger Menu
 <br>
-Day(18) - Animated Landing page with Transitions
+(17) - Animated Landing page with Transitions
 <br>
-Day(19)- Animate on Scroll
+(18) - Animate on Scroll
 <br>
-Day(20)- Draggable Slider
+(19) - Draggable Slider
 <br>
-Day(21)- Horizontal slider with skew effects
+(20) - Horizontal slider with skew effects
 <br>
-Day(22)- Animated splash screen intro
+(21) - Animated splash screen intro
 <br>
-Day(23)- Animated dark mode Toggle
+(22) - Animated dark mode Toggle
+<br>
+(23) - Disappearing navbar
 
 
 
