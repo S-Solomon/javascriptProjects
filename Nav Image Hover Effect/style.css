@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    background-color: #161616;
+}
+
+.menu {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    height: 60%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    position: relative;
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.071);
+}
+
+.menu span {
+    position: relative;
+    display: inline-block;  /* because you can't apply transformations to span elements by default  */
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-decoration: none;
+    mix-blend-mode: difference;
+    font-size: 30px;
+    padding-left: 1rem;
+}
+
+.one {
+    background-image: url(./images/img1.jpg);
+}
+.two {
+    background-image: url(./images/img2.jpg);
+}
+.three {
+    background-image: url(./images/img3.jpg);
+}
+.four {
+    background-image: url(./images/img4.jpg);
+}
+.five {
+    background-image: url(./images/img5.jpg);
+}
+.six {
+    background-image: url(./images/img6.jpg);
+}
+.hover-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 400px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0, -300px);
+    transition: 0.2s ease-out;
+}
+
+.hover-reveal__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    will-change: transform;
+    overflow: hidden;
+}
+
+.hover-reveal__img {
+    background-size: cover;
+    background-position: 50% 50%;
+    transform-origin: 50% 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    will-change: transform;
+    transform: scale(0.8, 0.8);
+    transition: 1.5s transform;
+}
