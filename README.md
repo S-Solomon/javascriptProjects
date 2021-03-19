@@ -49,6 +49,8 @@ This is a list of Javascript Projects for Beginners.
 (23) - Disappearing navbar
 <br>
 (24) - Nav with Image hover effect
+<br>
+(25) - Infinite scroll effect
 
 
 
