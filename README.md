@@ -51,6 +51,8 @@ This is a list of Javascript Projects for Beginners.
 (24) - Nav with Image hover effect
 <br>
 (25) - Infinite scroll effect
+<br>
+(26) - Linear Interpolation
 
 
 
