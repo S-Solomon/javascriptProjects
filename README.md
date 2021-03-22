@@ -54,7 +54,7 @@ This is a list of Javascript Projects for Beginners.
 <br>
 (26) - Linear Interpolation
 <br>
-(27) - 
+(27) - Implementing smooth Scrolling
 
 
 
