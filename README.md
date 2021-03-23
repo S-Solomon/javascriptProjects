@@ -53,6 +53,8 @@ This is a list of Javascript Projects for Beginners.
 (25) - Infinite scroll effect
 <br>
 (26) - Linear Interpolation
+<br>
+(27) - Implementing smooth Scrolling
 
 
 
