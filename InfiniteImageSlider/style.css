@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    overscroll-behavior-y: none;
+    background-color: black;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
 
 .slider-wrap {
     position: fixed;
