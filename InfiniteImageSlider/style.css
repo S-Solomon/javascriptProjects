@@ -36,7 +36,7 @@ body::-webkit-scrollbar {
     position: relative;
     flex: 1;
     overflow: hidden;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
 }
 
 .img-div{

@@ -33,17 +33,25 @@ function getScrollPos() {
 }
 
 function scrollUpdate() {
-    scrollPosition = getScrollPos();
-    if(clonesWidth + scrollPosition >= sliderWidth){
-        window.scrollTo({top: 1});
-    }else if (scrollPosition <= 0) {
-        window.scrollTo({top: sliderWidth - clonesWidth - 1});
+    if(window.innerWidth > 760) {
+        sliderWrap.style.overflow = 'hidden';
+        scrollPosition = getScrollPos();
+        if(clonesWidth + scrollPosition >= sliderWidth){
+            window.scrollTo({top: 1});
+        }else if (scrollPosition <= 0) {
+            window.scrollTo({top: sliderWidth - clonesWidth - 1});
+        }
+
+        slider.style.transform = `translateX(${-window.scrollY}px)`
+
+        requestAnimationFrame(scrollUpdate);
+    }else {
+        sliderWrap.style.overflow = 'scroll';
     }
-
-    slider.style.transform = `translateX(${-window.scrollY}px)`
-
-    requestAnimationFrame(scrollUpdate);
+    
 }
+
+window.addEventListener('resize', onLoad)
 
 function onLoad() {
     calculateDimensions()
