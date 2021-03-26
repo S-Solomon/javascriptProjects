@@ -18,8 +18,8 @@ body::-webkit-scrollbar {
 
 .progress-section {
     position: fixed;
-    right: 50px;
-    top: 40%;
+    left: 20px;
+    top: -10px;
     width: 60px;
     height: 20%;
     display: flex;
