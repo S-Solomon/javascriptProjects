@@ -55,6 +55,9 @@ This is a list of Javascript Projects for Beginners.
 (26) - Linear Interpolation
 <br>
 (27) - Implementing smooth Scrolling
+<br>
+(28) - Infinite Scrolling image slider
+
 
 
 
