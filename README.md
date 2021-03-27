@@ -57,6 +57,9 @@ This is a list of Javascript Projects for Beginners.
 (27) - Implementing smooth Scrolling
 <br>
 (28) - Infinite Scrolling image slider
+<br>
+(29) - Animate on Scroll With Intersection observer
+
 
 
 
