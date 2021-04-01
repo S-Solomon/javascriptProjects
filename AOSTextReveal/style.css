@@ -8,11 +8,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Graduate', cursive;
-    color: var(--var-color-two);
+    color: var(--var-color-one);
 }
 
 html, body {
-    background-color: var(--var-color-one);
+    background-color: var(--var-color-two);
     height: 2000px;
 }
 
@@ -50,7 +50,7 @@ ul li span {
     line-height: 4rem;
     font-size: 4rem;
     text-transform: uppercase;
-    /* transform: translateY(200%); */
+    transform: translateY(200%);
     margin: 0.05rem;
 }
 ul li span.active {
@@ -61,4 +61,8 @@ ul li span.active {
 ul li:hover{
     opacity: 0.5;
     cursor: pointer;
+}
+
+.gap {
+    width: 1rem;
 }
