@@ -61,6 +61,8 @@ This is a list of Javascript Projects for Beginners.
 (29) - Animate on Scroll With Intersection observer
 <br>
 (30) - Horizontal parallax slider
+<br>
+(31) - AOS Text Reveal
 
 
 
