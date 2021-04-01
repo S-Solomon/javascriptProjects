@@ -59,6 +59,8 @@ This is a list of Javascript Projects for Beginners.
 (28) - Infinite Scrolling image slider
 <br>
 (29) - Animate on Scroll With Intersection observer
+<br>
+(30) - Horizontal parallax slider
 
 
 
