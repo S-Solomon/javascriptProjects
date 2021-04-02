@@ -63,7 +63,8 @@ This is a list of Javascript Projects for Beginners.
 (30) - Horizontal parallax slider
 <br>
 (31) - AOS Text Reveal
-
+<br>
+(32) - Resize Observer API
 
 
 
