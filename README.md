@@ -65,6 +65,8 @@ This is a list of Javascript Projects for Beginners.
 (31) - AOS Text Reveal
 <br>
 (32) - Resize Observer API
+<br>
+(33) - Smooth Horizontal Scroll With SVG Filter Effects
 
 
 
