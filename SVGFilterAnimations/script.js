@@ -28,8 +28,63 @@ function animate() {
     transformElement(mainSlider, `translate3d(${-current}px, 0, 0)`); // in 3d, chrome offloads work to the gpu, uses less cpu
     transformElement(innerSliderTwo, `translate3d(${-current * 1.1}px, 0, 0)`);
 
+    for(let i = 0; i < imageItems.length; i++) {
+        imageItems[i].render();
+        if(current < (target-50) || current > (target + 50)) {
+            transformElement(imageItems[i].el, 'scale(0.8)')
+        }else {
+            transformElement(imageItems[i].el, 'scale(1)')
+
+        }
+    }
+
     requestAnimationFrame(animate); // calls the function over and over again
 }
+
+
+// Intersection Observer Options
+
+
+let options = {
+    rootMargin: '0px',
+    threshold: 0.9
+}
+
+class ImageItems {
+
+    constructor(el) {
+        this.el = el;
+        this.isVisible = false;
+        this.observer = new IntersectionObserver(enteries => {
+            enteries.forEach(entry => this.isVisible = entry.isIntersecting);
+        }, options);
+        this.observer.observe(this.el);
+        this.current = 150;
+        this.target = 150;
+        this.ease = 0.1;
+        this.setDisplacement();
+    }
+
+    // method
+    setDisplacement() {
+        this.el.querySelector('feDisplacementMap').scale.baseVal = this.current;
+    }
+
+    render() {
+        if(this.isVisible && this.target != 0) {
+            this.target = 0;
+            this.el.classList.add('active');
+        }
+        this.current = lerp(this.current, this.target, this.ease).toFixed(2);
+        this.el.querySelector('feDisplacementMap').scale.baseVal = this.current;
+    }    
+}
+
+images.forEach(image => {
+    imageItems.push(new ImageItems(image));
+})
+
+
 
 init()
 animate();
