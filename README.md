@@ -67,6 +67,8 @@ This is a list of Javascript Projects for Beginners.
 (32) - Resize Observer API
 <br>
 (33) - Smooth Horizontal Scroll With SVG Filter Effects
+<br>
+(34) - Animate on Scroll 3D Effects
 
 
 
