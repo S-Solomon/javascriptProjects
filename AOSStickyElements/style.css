@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "harmond";
+    src: url(./fonts/Harmond-SemiBoldCondensed.otf) format("OpenType");
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "harmond";
+}
+
+main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+html,
+body {
+    overscroll-behavior: none;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid black;
+}
+
+.project {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
