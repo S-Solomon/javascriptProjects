@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "three": "^0.127.0"
+  },
+  "devDependencies": {
+    "glslify-bundle": "^5.1.1"
   }
 }

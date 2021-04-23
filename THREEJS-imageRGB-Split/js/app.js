@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import vertexShader from './shaders/vertexShader.glsl';
+import fragmentShader from './shaders/fragmentshader.glsl' ;
 
 
 
@@ -23,7 +25,7 @@ function smoothScroll() {
     target = window.scrollY;
     current = lerp(current, target, ease);
     scrollable.style.transform = `translate3d(0, ${-current}px, 0)`;
-    requestAnimationFrame(smoothScroll)
+    // requestAnimationFrame(smoothScroll)
 }
 
 
@@ -73,7 +75,19 @@ class EffectCanvas {
         this.renderer.setSize(this.viewport.width, this.viewport.height)
     }
 
-    createMeshItems() {}
+    createMeshItems() {
+        this.images.forEach((image) => {
+            let meshItem = new MeshItem(image, this.scene);
+            this.meshItems.push(meshItem);
+        })
+    }
+
+    render() {
+        smoothScroll();
+        for(let i = 0; i < this.meshItems.length; i++) {
+            this.meshItems[i].render()
+        }
+    }
 }
 
 class MeshItem {
@@ -100,9 +114,24 @@ class MeshItem {
             uAlpha: {value: 1.0}
         }
         this.material = new THREE.ShaderMaterial({ 
-            uniforms:this.uniforms,
+            uniforms: this.uniforms,
+            vertexShader: vertexShader,
+            fragmentShader: fragmentShader
             
-        })
+        });
+        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        this.getDimensions();
+        this.mesh.position.set(this.offset.x, this.offset.y, 0);
+        this.mesh.scale.set(this.sizes.x, this.sizes.y, 0);
+    }
+
+    render() {
+        // repeatedly called
+        this.getDimensions();
+        this.mesh.position.set(this.offset.x, this.offset.y, 0);
+        this.mesh.scale.set(this.sizes.x, this.sizes.y, 0);
+        this.uniforms.uOffset.value.set(0.0, -(target - current) * 0.0002)
+        
     }
 }
 
