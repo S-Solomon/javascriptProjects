@@ -65,7 +65,51 @@ class EffectCanvas {
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.container.appendChild(this.renderer.domElement);
     }
+
+    onWindowResize() {
+        init();
+        this.camera.aspect = this.viewport.aspect;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(this.viewport.width, this.viewport.height)
+    }
+
+    createMeshItems() {}
 }
+
+class MeshItem {
+    constructor(element, scene) {
+        this.element = element;
+        this.scene = scene;
+        this.offset = new THREE.Vector2(0,0);
+        this.sizes = new THREE.Vector2(0,0);
+        this.createMesh();
+    }
+
+    getDimensions() {
+        const { width, height, top, left } = this.element.getBoundingClientRect();
+        this.sizes.set(width, height);
+        this.offset.set(left - window.innerWidth / 2 + width / 2, -top + window.innerHeight/2 - height / 2)
+    }
+
+    createMesh() {
+        this.geometry = new THREE.PlaneBufferGeometry(1, 1, 30, 30);
+        this.imageTexture = new THREE.TextureLoader().load(this.element.src);
+        this.uniforms = {
+            uTexture: {value: this.imageTexture},
+            uOffset: {value: new THREE.Vector2(0.0, 0.0)},
+            uAlpha: {value: 1.0}
+        }
+        this.material = new THREE.ShaderMaterial({ 
+            uniforms:this.uniforms,
+            
+        })
+    }
+}
+
+
+
 
 init()
 smoothScroll()
+
+new EffectCanvas()
