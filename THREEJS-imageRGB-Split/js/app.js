@@ -87,6 +87,8 @@ class EffectCanvas {
         for(let i = 0; i < this.meshItems.length; i++) {
             this.meshItems[i].render()
         }
+        this.renderer.render(this.scene, this.camera);
+        requestAnimationFrame(this.render.bind(this));
     }
 }
 
@@ -139,6 +141,4 @@ class MeshItem {
 
 
 init()
-smoothScroll()
-
 new EffectCanvas()
