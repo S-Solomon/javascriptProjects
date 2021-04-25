@@ -70,13 +70,13 @@ class EffectCanvas {
 
     onWindowResize() {
         init();
-        this.camera.aspect = this.viewport.aspect;
+        this.camera.aspect = this.viewport.aspectRatio;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(this.viewport.width, this.viewport.height)
     }
 
     createMeshItems() {
-        this.images.forEach((image) => {
+        this.images.forEach(image => {
             let meshItem = new MeshItem(image, this.scene);
             this.meshItems.push(meshItem);
         })
@@ -125,6 +125,8 @@ class MeshItem {
         this.getDimensions();
         this.mesh.position.set(this.offset.x, this.offset.y, 0);
         this.mesh.scale.set(this.sizes.x, this.sizes.y, 0);
+
+        this.scene.add(this.mesh);
     }
 
     render() {

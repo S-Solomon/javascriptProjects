@@ -35688,10 +35688,20 @@ if (typeof window !== 'undefined') {
     window.__THREE__ = REVISION;
   }
 }
+},{}],"js/shaders/vertexShader.glsl":[function(require,module,exports) {
+module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\n#define M_PI 3.1415926535897932384626433832795\n\nvec3 deformationCurve(vec3 position, vec2 uv, vec2 offset) {\n   position.x = position.x + (sin(uv.y * M_PI) * offset.x);\n   position.y = position.y + (sin(uv.x * M_PI) * offset.y);\n   return position;\n}\n\nvoid main() {\n   vUv = uv;\n   vec3 newPosition = deformationCurve(position, uv, uOffset);\n   gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );\n}";
+},{}],"js/shaders/fragmentshader.glsl":[function(require,module,exports) {
+module.exports = "#define GLSLIFY 1\n// uniform sampler2D uTexture;\n// uniform float uAlpha;\n// uniform vec2 uOffset;\n// varying vec2 vUv;\n\n// void main(){\n//     gl_FragColor = vec4(255.,255.,255.,255.);\n// }\n\nuniform sampler2D uTexture;\nuniform float uAlpha;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nvec3 rgbShift(sampler2D textureImage, vec2 uv, vec2 offset) {\n   float r = texture2D(textureImage,uv + offset).r;\n   vec2 gb = texture2D(textureImage,uv).gb;\n   return vec3(r,gb);\n}\n\nvoid main() {\n   vec3 color = rgbShift(uTexture,vUv,uOffset);\n   gl_FragColor = vec4(color,uAlpha);\n}";
 },{}],"js/app.js":[function(require,module,exports) {
 "use strict";
 
 var THREE = _interopRequireWildcard(require("three"));
+
+var _vertexShader = _interopRequireDefault(require("./shaders/vertexShader.glsl"));
+
+var _fragmentshader = _interopRequireDefault(require("./shaders/fragmentshader.glsl"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -35732,8 +35742,7 @@ function init() {
 function smoothScroll() {
   target = window.scrollY;
   current = lerp(current, target, ease);
-  scrollable.style.transform = "translate3d(0, ".concat(-current, "px, 0)");
-  requestAnimationFrame(smoothScroll);
+  scrollable.style.transform = "translate3d(0, ".concat(-current, "px, 0)"); // requestAnimationFrame(smoothScroll)
 }
 
 var EffectCanvas = /*#__PURE__*/function () {
@@ -35783,13 +35792,33 @@ var EffectCanvas = /*#__PURE__*/function () {
     key: "onWindowResize",
     value: function onWindowResize() {
       init();
-      this.camera.aspect = this.viewport.aspect;
+      this.camera.aspect = this.viewport.aspectRatio;
       this.camera.updateProjectionMatrix();
       this.renderer.setSize(this.viewport.width, this.viewport.height);
     }
   }, {
     key: "createMeshItems",
-    value: function createMeshItems() {}
+    value: function createMeshItems() {
+      var _this = this;
+
+      this.images.forEach(function (image) {
+        var meshItem = new MeshItem(image, _this.scene);
+
+        _this.meshItems.push(meshItem);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      smoothScroll();
+
+      for (var i = 0; i < this.meshItems.length; i++) {
+        this.meshItems[i].render();
+      }
+
+      this.renderer.render(this.scene, this.camera);
+      requestAnimationFrame(this.render.bind(this));
+    }
   }]);
 
   return EffectCanvas;
@@ -35835,8 +35864,24 @@ var MeshItem = /*#__PURE__*/function () {
         }
       };
       this.material = new THREE.ShaderMaterial({
-        uniforms: this.uniforms
+        uniforms: this.uniforms,
+        vertexShader: _vertexShader.default,
+        fragmentShader: _fragmentshader.default
       });
+      this.mesh = new THREE.Mesh(this.geometry, this.material);
+      this.getDimensions();
+      this.mesh.position.set(this.offset.x, this.offset.y, 0);
+      this.mesh.scale.set(this.sizes.x, this.sizes.y, 0);
+      this.scene.add(this.mesh);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // repeatedly called
+      this.getDimensions();
+      this.mesh.position.set(this.offset.x, this.offset.y, 0);
+      this.mesh.scale.set(this.sizes.x, this.sizes.y, 0);
+      this.uniforms.uOffset.value.set(0.0, -(target - current) * 0.0002);
     }
   }]);
 
@@ -35844,9 +35889,8 @@ var MeshItem = /*#__PURE__*/function () {
 }();
 
 init();
-smoothScroll();
 new EffectCanvas();
-},{"three":"node_modules/three/build/three.module.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"three":"node_modules/three/build/three.module.js","./shaders/vertexShader.glsl":"js/shaders/vertexShader.glsl","./shaders/fragmentshader.glsl":"js/shaders/fragmentshader.glsl"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -35874,7 +35918,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55073" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51678" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -52,6 +52,7 @@ h1 {
 img {
     position: absolute;
     height: 60%;
+    visibility: hidden;
 }
 
 canvas {
