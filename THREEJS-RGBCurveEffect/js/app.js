@@ -127,6 +127,23 @@ class Webgl {
 
     render() {
         this.offset.X = lerp(this.offset.x, targetX, 0.1)
+        this.offset.Y = lerp(this.offset.y, targetY, 0.1)
+        this.uniforms.uOffset.value.set((targetX - this.offset.x) * 0.0005, -(targetY - this.offset.y) * 0.0005);
+        this.mesh.position.set(this.offset.x - (window.innerWidth / 2), -this.offset.y + (window.innerHeight / 2));
+
+        this.linksHover 
+        ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 1.0)
+        : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 1.0)
+
+        for(let i = 0; i < this.links.length; i++) {
+            if(this.linksHover) {
+                this.links[i].style.opacity = 0.2;
+            }else {
+                this.links[i].style.opacity = 0.2;
+            }
+        }
+
+
         this.renderer.render(this.scene, this.camera);
         requestAnimationFrame(this.render.bind(this));
     }

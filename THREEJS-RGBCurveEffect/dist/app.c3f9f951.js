@@ -36083,7 +36083,7 @@ exports.default = _default;
 },{"../images/1.jpg":"images/1.jpg","../images/2.jpg":"images/2.jpg","../images/3.jpg":"images/3.jpg","../images/4.jpg":"images/4.jpg"}],"shaders/vertex.glsl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nfloat M_PI = 3.141529\n\nvec3 deformationCurve(vec3 position, vec2 uv, vec2 offset) {\n    position.x = position.x + (sin(uv.y * M_PI) * offset.x);\n    position.y = position.y + (sin(uv.x * M_PI) * offset.y);\n    return position\n}\n\nvoid  main() {\n    vUv= uv;\n    vec3 newPosition = deformationCurve(position, uv, uOffset);\n    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);\n}";
 },{}],"shaders/fragment.glsl":[function(require,module,exports) {
-module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform float uAlpha;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nvoid main() {\n    vec4 color = texture2D(uTexture, vUv);\n    gl_FragColor = color;\n}\n";
+module.exports = "#define GLSLIFY 1\nuniform sampler2D uTexture;\nuniform float uAlpha;\nuniform vec2 uOffset;\nvarying vec2 vUv;\n\nvec3 rgbShift(sampler2D textureImage, vec2 uv, vec2 offset) {\n   float r = texture2D(textureImage, uv + offset).r;\n   vec2 gb = texture2D(textureImage, uv).gb;\n   return vec3(r, gb);\n}\n\nvoid main() {\n    // vec4 color = texture2D(uTexture, vUv);\n    vec3 color = rgbShift(uTexture, vUv, Offset);\n    gl_FragColor = vec4 (color, uAlpha);\n}\n";
 },{}],"js/app.js":[function(require,module,exports) {
 "use strict";
 
@@ -36264,6 +36264,19 @@ var Webgl = /*#__PURE__*/function () {
     key: "render",
     value: function render() {
       this.offset.X = lerp(this.offset.x, targetX, 0.1);
+      this.offset.Y = lerp(this.offset.y, targetY, 0.1);
+      this.uniforms.uOffset.value.set((targetX - this.offset.x) * 0.0005, -(targetY - this.offset.y) * 0.0005);
+      this.mesh.position.set(this.offset.x - window.innerWidth / 2, -this.offset.y + window.innerHeight / 2);
+      this.linksHover ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 1.0) : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 1.0);
+
+      for (var i = 0; i < this.links.length; i++) {
+        if (this.linksHover) {
+          this.links[i].style.opacity = 0.2;
+        } else {
+          this.links[i].style.opacity = 0.2;
+        }
+      }
+
       this.renderer.render(this.scene, this.camera);
       requestAnimationFrame(this.render.bind(this));
     }
@@ -36301,7 +36314,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49637" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57427" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
