@@ -69,6 +69,8 @@ This is a list of Javascript Projects for Beginners.
 (33) - Smooth Horizontal Scroll With SVG Filter Effects
 <br>
 (34) - Animate on Scroll 3D Effects
+<br>
+(35) - AOS - Sticky Elements on Scroll
 
 
 
