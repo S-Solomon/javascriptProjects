@@ -71,6 +71,8 @@ This is a list of Javascript Projects for Beginners.
 (34) - Animate on Scroll 3D Effects
 <br>
 (35) - AOS - Sticky Elements on Scroll
+<br>
+(36) - THREE JS - Image RGB Split / Distortion on Scroll
 
 
 
