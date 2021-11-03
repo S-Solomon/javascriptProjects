@@ -30,7 +30,7 @@ slider.addEventListener('mousemove', (e) => {
 })
 
 slider.addEventListener('wheel', (e) => {
-    e.preventDefault();
+    e.preventDefault(); // this will stop the actual window from scrolling down
     slider.parentElement.scrollLeft  += e.deltaY;
 })
 
