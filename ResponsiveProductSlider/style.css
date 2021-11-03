@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    color: #000000;
+}
+
+.slider-wrap {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 300px;
+    border: 1px solid black;
+    cursor: grab;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+
+/* Chrome Safari and Opera */
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, edge and Firefox */
+.slider {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.slider-inner {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5500px;
+    /* background-color: blue; */
+}
+
+.item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    background-color: pink;
+    height: 98%;
+    top: 1%;
+    border: 1px solid black;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #000000;
+}
+
+.prog-bar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #383838;
+}
